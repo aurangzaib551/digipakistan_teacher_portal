@@ -11,7 +11,7 @@ import IconButton from "@material-ui/core/IconButton";
 import { useHistory } from "react-router-dom";
 import firebase from "../../../config/fbConfig";
 
-const Navbar = ({ setProfile }) => {
+const Navbar = () => {
   const [open, setOpen] = useState(true);
   const [no, setno] = useState(1);
 
@@ -91,7 +91,7 @@ const Navbar = ({ setProfile }) => {
               <ListItem
                 button
                 onClick={() => {
-                  push("/registerTeacher");
+                  push("/courseVideos");
                 }}
               >
                 <ListItemIcon>
@@ -163,7 +163,6 @@ const Navbar = ({ setProfile }) => {
                     .signOut()
                     .then(() => {
                       replace("/");
-                      setProfile({});
                     });
                 }}
               >

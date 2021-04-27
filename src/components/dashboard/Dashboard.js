@@ -34,7 +34,7 @@ const Dashboard = ({ user, setProfile, profile }) => {
 
   return profile.teacher ? (
     <>
-      <Navbar setProfile={setProfile} />
+      <Navbar />
     </>
   ) : (
     <Loader />

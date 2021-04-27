@@ -1,4 +1,4 @@
-import React, { useState, useLayoutEffect, Profiler } from "react";
+import React, { useState, useLayoutEffect } from "react";
 import { Button, makeStyles, MenuItem, TextField } from "@material-ui/core";
 import { connect } from "react-redux";
 import {
@@ -9,7 +9,7 @@ import {
 import firebase from "../../config/fbConfig";
 import Navbar from "../common/navbar/Navbar";
 import { useMediaQuery } from "react-responsive";
-import { Redirect, useHistory } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 import Loader from "../../Loader";
 
 const useStyles = makeStyles(() => ({
@@ -33,8 +33,6 @@ const Upload = (props) => {
 
   // materialize css initialising
   const classes = useStyles();
-
-  const { push } = useHistory();
 
   const handleUpdate = (event) => {
     event.preventDefault();

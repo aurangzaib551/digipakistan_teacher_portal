@@ -47,3 +47,32 @@ body {
   background-color: grey;
   color: white !important;
 }
+
+.mt-lms {
+  margin-top: 90px !important;
+}
+
+@media only screen and (max-width: 576px) {
+  .mt-lms {
+    margin-top: 150px !important;
+  }
+}
+
+@media only screen and (max-width: 1160px) {
+  .modalLeft {
+    margin-left: 140px !important;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .modalLeft {
+    margin-left: 0px !important;
+  }
+}
+
+.loader {
+  color: white !important;
+  width: 23px !important;
+  height: 23px !important;
+  margin: 3px 0;
+}
