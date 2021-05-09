@@ -1,0 +1,39 @@
+.dashboard {
+  .box {
+    font-size: 36px;
+    width: 420px;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .dashboard {
+    .box {
+      font-size: 30px;
+    }
+  }
+}
+
+@media only screen and (max-width: 465px) {
+  .dashboard {
+    .box {
+      width: 350px;
+      font-size: 7vw;
+    }
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .dashboard {
+    .box {
+      width: 300px;
+    }
+  }
+}
+
+@media only screen and (max-width: 325px) {
+  .dashboard {
+    .box {
+      width: 250px;
+    }
+  }
+}

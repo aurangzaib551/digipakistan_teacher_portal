@@ -25,6 +25,7 @@ const useStyles = makeStyles(() => ({
 const Upload = (props) => {
   // state
   const [courseName, setCourseName] = useState("");
+  const [notification, setNotification] = useState("");
   const [categoryOfLecture, setCategoryOfLecture] = useState("");
   const [topic, setTopic] = useState("");
   const [subTopic, setSubTopic] = useState("");
@@ -52,7 +53,7 @@ const Upload = (props) => {
             video: videoURL,
           });
           // updating the lecture
-          props.updateLecture(watch, courseName, topic);
+          props.updateLecture(watch, courseName, topic, notification);
         });
     }
   };
@@ -60,7 +61,7 @@ const Upload = (props) => {
   const handleClick = (event) => {
     event.preventDefault();
     // uploading new lecture
-    props.uploadLecture(courseName, topic, subTopic, videoURL);
+    props.uploadLecture(courseName, topic, subTopic, videoURL, notification);
   };
 
   if (props.lectureUploaded) {
@@ -69,6 +70,7 @@ const Upload = (props) => {
       setCategoryOfLecture("");
       setTopic("");
       setSubTopic("");
+      setNotification("");
       setVideoURL("");
       props.clearAll();
       // window.location.reload();
@@ -144,6 +146,32 @@ const Upload = (props) => {
             id="course name"
             select
             label="Select Course Name"
+            variant="outlined"
+          >
+            <MenuItem value={props.profile.firstCourseName}>
+              {props.profile.firstCourseName}
+            </MenuItem>
+          </TextField>
+
+          <TextField
+            style={{ width: "100%", marginTop: 20 }}
+            InputProps={{
+              classes: {
+                notchedOutline: classes.textfieldOutline,
+                focused: classes.textfieldOutline,
+              },
+            }}
+            InputLabelProps={{
+              classes: {
+                focused: classes.label,
+              },
+            }}
+            fullWidth
+            value={notification}
+            onChange={(event) => setNotification(event.target.value)}
+            id="notification"
+            select
+            label="Select Notification Category"
             variant="outlined"
           >
             <MenuItem value={props.profile.firstCourseName}>

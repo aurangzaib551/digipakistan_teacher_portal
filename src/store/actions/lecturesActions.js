@@ -1,7 +1,14 @@
-export const uploadLecture = (collection, topic, subTopic, video) => {
-  return (dispatch, getState, { firebase }) => {
-    firebase
-      .firestore()
+export const uploadLecture = (
+  collection,
+  topic,
+  subTopic,
+  video,
+  notification
+) => {
+  return (dispatch, getState, { getFirebase, getFirestore }) => {
+    const firestore = getFirestore();
+
+    firestore
       .collection(collection)
       .doc(topic)
       .set({
@@ -14,13 +21,11 @@ export const uploadLecture = (collection, topic, subTopic, video) => {
         ],
       })
       .then(() => {
-        firebase
-          .firestore()
-          .collection("Notifications")
-          .add({
-            name: `${collection} lecture has been uploaded`,
-            createdAt: new Date(),
-          });
+        firestore.collection("Notifications").add({
+          name: `${collection} lecture has been uploaded`,
+          createdAt: new Date(),
+          course: notification,
+        });
       })
       .then(() =>
         dispatch({
@@ -31,24 +36,22 @@ export const uploadLecture = (collection, topic, subTopic, video) => {
   };
 };
 
-export const updateLecture = (watch, collection, topic) => {
-  return (dispatch, getState, { firebase }) => {
+export const updateLecture = (watch, collection, topic, notification) => {
+  return (dispatch, getState, { getFirebase, getFirestore }) => {
+    const firestore = getFirestore();
     if (watch) {
-      firebase
-        .firestore()
+      firestore
         .collection(collection)
         .doc(topic)
         .update({
           watch,
         })
         .then(() => {
-          firebase
-            .firestore()
-            .collection("Notifications")
-            .add({
-              name: `${collection} lecture has been uploaded`,
-              createdAt: new Date(),
-            });
+          firestore.collection("Notifications").add({
+            name: `${collection} lecture has been uploaded`,
+            createdAt: new Date(),
+            course: notification,
+          });
         })
         .then(() =>
           dispatch({

@@ -105,7 +105,7 @@ const Navbar = () => {
               <ListItem
                 button
                 onClick={() => {
-                  push("/lectures");
+                  push("/dashboard");
                 }}
               >
                 <ListItemIcon>
@@ -118,7 +118,7 @@ const Navbar = () => {
               <ListItem
                 button
                 onClick={() => {
-                  push("/quizizz");
+                  push("/dashboard");
                 }}
               >
                 <ListItemIcon>
@@ -144,7 +144,33 @@ const Navbar = () => {
               <ListItem
                 button
                 onClick={() => {
-                  push("/help");
+                  push("/announcements");
+                }}
+              >
+                <ListItemIcon>
+                  <i className="fas fa-bullhorn text-white fa-2x"></i>
+                </ListItemIcon>
+                <ListItemText>
+                  <span className="fw-bold">Annoucements</span>
+                </ListItemText>
+              </ListItem>
+              <ListItem
+                button
+                onClick={() => {
+                  push("/sendNotification");
+                }}
+              >
+                <ListItemIcon>
+                  <i className="fas fa-bell text-white fa-2x"></i>
+                </ListItemIcon>
+                <ListItemText>
+                  <span className="fw-bold">Send Notification</span>
+                </ListItemText>
+              </ListItem>
+              <ListItem
+                button
+                onClick={() => {
+                  push("/dashboard");
                 }}
               >
                 <ListItemIcon>

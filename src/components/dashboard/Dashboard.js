@@ -3,6 +3,7 @@ import Navbar from "../common/navbar/Navbar";
 import firebase from "../../config/fbConfig";
 import Loader from "../../Loader";
 import { Redirect, useHistory } from "react-router-dom";
+import Content from "./content/Content";
 
 const Dashboard = ({ user, setProfile, profile }) => {
   const { push } = useHistory();
@@ -35,6 +36,7 @@ const Dashboard = ({ user, setProfile, profile }) => {
   return profile.teacher ? (
     <>
       <Navbar />
+      <Content profile={profile} />
     </>
   ) : (
     <Loader />

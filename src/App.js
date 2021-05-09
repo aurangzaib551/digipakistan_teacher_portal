@@ -150,6 +150,12 @@ const MayaMaxAnimation3D = lazy(() =>
   import("./components/lectures/3dMayaMaxAnimation")
 );
 const Autocad = lazy(() => import("./components/lectures/autocad"));
+const SendNotification = lazy(() =>
+  import("./components/send_notification/SendNotification")
+);
+const Announcements = lazy(() =>
+  import("./components/announcements/announcements")
+);
 
 const App = () => {
   const [loggedIn, setLoggedIn] = useState(null);
@@ -181,8 +187,14 @@ const App = () => {
         <Route path="/uploadLecture">
           <UploadLecture user={loggedIn} profile={profile} />
         </Route>
+        <Route path="/sendNotification">
+          <SendNotification user={loggedIn} profile={profile} />
+        </Route>
         <Route path="/courseVideos">
           <CourseVideos user={loggedIn} profile={profile} />
+        </Route>
+        <Route path="/announcements">
+          <Announcements user={loggedIn} profile={profile} />
         </Route>
         <Route path="/lmsDashboard/myCourses/frontEndLMS" exact>
           <MicrosoftFrontEndDevelopment user={loggedIn} profile={profile} />

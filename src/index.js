@@ -21,13 +21,13 @@ const store = createStore(
   )
 );
 
+window.onbeforeunload = firebase.auth().signOut();
+
 ReactDOM.render(
-  <React.StrictMode>
-    <Provider store={store}>
-      <Router>
-        <App />
-      </Router>
-    </Provider>
-  </React.StrictMode>,
+  <Provider store={store}>
+    <Router>
+      <App />
+    </Router>
+  </Provider>,
   document.getElementById("root")
 );
