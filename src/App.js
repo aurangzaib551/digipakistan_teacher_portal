@@ -119,7 +119,7 @@ const VideoEditing = lazy(() => import("./components/lectures/videoEditing"));
 const XamarinMobileAppsDevelopment = lazy(() =>
   import("./components/lectures/xamarinMobileAppsDevelopment")
 );
-const certifiedInformationSecurityManager = lazy(() =>
+const CertifiedInformationSecurityManager = lazy(() =>
   import("./components/lectures/certifiedInformationSecurityManager")
 );
 const CompTIASecurityPlus = lazy(() =>
@@ -399,7 +399,7 @@ const App = () => {
           <CisspCyberSecurityProfessional user={loggedIn} profile={profile} />
         </Route>
         <Route path="/lmsDashboard/myCourses/certifiedInformationSecurityManagerLMS">
-          <certifiedInformationSecurityManager
+          <CertifiedInformationSecurityManager
             user={loggedIn}
             profile={profile}
           />
