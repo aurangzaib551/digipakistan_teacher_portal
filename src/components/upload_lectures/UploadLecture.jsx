@@ -419,8 +419,8 @@ const Upload = (props) => {
                 AWS Cloud Computing
               </MenuItem>
             )}
-            {props.profile.firstCourseName === "Internet of Things (IoT)" && (
-              <MenuItem value="Internet of Things">
+            {props.profile.firstCourseName === "Internet of Things" && (
+              <MenuItem value="Internet of Things (IoT)">
                 Internet of Things (IoT)
               </MenuItem>
             )}
